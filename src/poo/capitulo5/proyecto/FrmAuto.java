@@ -27,28 +27,50 @@ public class FrmAuto extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblAutos = new javax.swing.JLabel();
+        lblAutomovil = new javax.swing.JLabel();
+        cmbBicicletas = new javax.swing.JComboBox<>();
+        btnMostrarInfoBici = new javax.swing.JButton();
+        btnReservarBici = new javax.swing.JButton();
+        lblFondoAuto = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Automóviles");
+        setMaximumSize(new java.awt.Dimension(505, 602));
+        setMinimumSize(new java.awt.Dimension(505, 602));
+        setPreferredSize(new java.awt.Dimension(505, 602));
+        getContentPane().setLayout(null);
 
-        lblAutos.setText("Autos");
+        lblAutomovil.setBackground(new java.awt.Color(0, 0, 0));
+        lblAutomovil.setFont(new java.awt.Font("Wide Latin", 0, 36)); // NOI18N
+        lblAutomovil.setForeground(new java.awt.Color(255, 255, 255));
+        lblAutomovil.setText("Automóviles");
+        getContentPane().add(lblAutomovil);
+        lblAutomovil.setBounds(50, 30, 410, 70);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(175, 175, 175)
-                .addComponent(lblAutos)
-                .addContainerGap(197, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(lblAutos)
-                .addContainerGap(261, Short.MAX_VALUE))
-        );
+        cmbBicicletas.setBackground(new java.awt.Color(0, 0, 0));
+        cmbBicicletas.setFont(new java.awt.Font("Wide Latin", 0, 12)); // NOI18N
+        cmbBicicletas.setForeground(new java.awt.Color(255, 255, 255));
+        cmbBicicletas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una automóvil..." }));
+        getContentPane().add(cmbBicicletas);
+        cmbBicicletas.setBounds(90, 120, 330, 40);
+
+        btnMostrarInfoBici.setBackground(new java.awt.Color(0, 0, 0));
+        btnMostrarInfoBici.setFont(new java.awt.Font("Wide Latin", 0, 12)); // NOI18N
+        btnMostrarInfoBici.setForeground(new java.awt.Color(255, 255, 255));
+        btnMostrarInfoBici.setText("Ver info del auto");
+        getContentPane().add(btnMostrarInfoBici);
+        btnMostrarInfoBici.setBounds(140, 180, 230, 30);
+
+        btnReservarBici.setBackground(new java.awt.Color(0, 0, 0));
+        btnReservarBici.setFont(new java.awt.Font("Wide Latin", 0, 12)); // NOI18N
+        btnReservarBici.setForeground(new java.awt.Color(255, 255, 255));
+        btnReservarBici.setText("Reservar");
+        getContentPane().add(btnReservarBici);
+        btnReservarBici.setBounds(190, 230, 130, 40);
+
+        lblFondoAuto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Fondo Interfaz Automovil.jpg"))); // NOI18N
+        getContentPane().add(lblFondoAuto);
+        lblFondoAuto.setBounds(0, 0, 510, 610);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -90,6 +112,10 @@ public class FrmAuto extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel lblAutos;
+    private javax.swing.JButton btnMostrarInfoBici;
+    private javax.swing.JButton btnReservarBici;
+    private javax.swing.JComboBox<String> cmbBicicletas;
+    private javax.swing.JLabel lblAutomovil;
+    private javax.swing.JLabel lblFondoAuto;
     // End of variables declaration//GEN-END:variables
 }
