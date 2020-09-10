@@ -16,6 +16,10 @@ public class FrmAuto extends javax.swing.JFrame {
      */
     public FrmAuto() {
         initComponents();
+        Automovil auto1= new Automovil(2020, "Gol",5,"Plateado","Volkswagen", 16000.00);
+        Automovil auto2= new Automovil(2019, "Crafter",21,"Blanco","Volkswagen", 63000.00);
+        Automovil auto3= new Automovil(2020, "Jetta",5,"Rojo","Volkswagen", 19990.00);
+        
     }
 
     /**
@@ -59,6 +63,11 @@ public class FrmAuto extends javax.swing.JFrame {
         btnMostrarInfoBici.setFont(new java.awt.Font("Wide Latin", 0, 12)); // NOI18N
         btnMostrarInfoBici.setForeground(new java.awt.Color(255, 255, 255));
         btnMostrarInfoBici.setText("Ver info del auto");
+        btnMostrarInfoBici.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMostrarInfoBiciActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnMostrarInfoBici);
         btnMostrarInfoBici.setBounds(140, 180, 230, 30);
 
@@ -75,6 +84,11 @@ public class FrmAuto extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnMostrarInfoBiciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarInfoBiciActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_btnMostrarInfoBiciActionPerformed
 
     /**
      * @param args the command line arguments

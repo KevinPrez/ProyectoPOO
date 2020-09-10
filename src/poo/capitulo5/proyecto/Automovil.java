@@ -11,7 +11,17 @@ package poo.capitulo5.proyecto;
  */
 public class Automovil extends VehiculoConMotor {
     private int numAsientos;
-
+    public Automovil(){
+        
+    }
+    public Automovil(int año, String modelo, int numAsientos, String color, String marca, double precio){
+            this.año=año;
+            this.modelo=modelo;
+            this.numAsientos=numAsientos;
+            this.color=color;
+            this.marca=marca;
+            this.precio=precio;
+            }
     public int getNumAsientos() {
         return numAsientos;
     }

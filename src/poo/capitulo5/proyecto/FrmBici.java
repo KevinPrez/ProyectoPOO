@@ -16,6 +16,10 @@ public class FrmBici extends javax.swing.JFrame {
      */
     public FrmBici() {
         initComponents();
+        
+        Bicicleta bici1=new Bicicleta("Aluminio","SpeedFox","Gris","BMC Bikes",10499.00);
+        Bicicleta bici2=new Bicicleta("Fibra de carbono","S-Works Turbo Levo","Rojo","Specialized",11600.00);
+        Bicicleta bici3=new Bicicleta("Acero Inosidable","Rallon M LTD","Verde","Orbea",1200.00);
     }
 
     /**

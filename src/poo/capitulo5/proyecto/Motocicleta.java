@@ -11,7 +11,17 @@ package poo.capitulo5.proyecto;
  */
 public class Motocicleta extends VehiculoConMotor{
     private String categoria;
-    
+    public Motocicleta(){
+        
+    }
+    public Motocicleta(int año, String modelo, String categoria ,String color, double precio,String marca){
+        this.año=año;
+        this.modelo=modelo;
+        this.categoria=categoria;
+        this.color=color;
+        this.precio=precio;
+        this.marca=marca;
+    }
     public String getCategoria() {
         return categoria;
     }
