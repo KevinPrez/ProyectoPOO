@@ -11,7 +11,7 @@ package poo.capitulo5.proyecto;
  */
 public class Motocicleta extends VehiculoConMotor{
     private String categoria;
-
+    
     public String getCategoria() {
         return categoria;
     }

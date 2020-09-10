@@ -5,12 +5,15 @@
  */
 package poo.capitulo5.proyecto;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author pc ponce
  */
 public class Cliente extends Persona{
     private String email;
+    private ArrayList <Vehiculo> vehiculosReservados = new ArrayList<>();
 
     public String getEmail() {
         return email;
@@ -41,6 +44,8 @@ public class Cliente extends Persona{
         return super.esCedulaValida(cedula);
     }
     
-    
+    public void agregarVehiculoReservado(Vehiculo vehicle){
+        vehiculosReservados.add(vehicle);
+    }
     
 }

@@ -158,11 +158,9 @@ public class VehículosKAR extends javax.swing.JFrame {
         nombre = txtNombre.getText().toUpperCase();
 
         email = txtEmail.getText();
-        //validar el email primero
 
         Cliente c1 = new Cliente();
-        //do{
-        //GAAAAAAAAAAAAAAAAAAAAA
+
         if (!txtNombre.getText().isBlank() || !txtEmail.getText().isBlank() || !txtCedula.getText().isBlank()) {
             cedula = txtCedula.getText();
             cedula = cedula.replace("-", "");
@@ -201,7 +199,7 @@ public class VehículosKAR extends javax.swing.JFrame {
                 } else {
                     JOptionPane.showMessageDialog(rootPane, "El número de cédula o el correo electronico ingresado es inválido,"
                             + " ingrese de manera correcta cada uno de estos apartados, por favor.");
-                    
+
                 }
 
             } else {
@@ -211,8 +209,7 @@ public class VehículosKAR extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(rootPane, "Llene todos los apartados por favor.");
         }
-        
-        //}while(c1.esCedulaValida(cedula) == false);
+
 
     }//GEN-LAST:event_btnContinuarActionPerformed
 
@@ -247,8 +244,7 @@ public class VehículosKAR extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new VehículosKAR().setVisible(true)
-                ;
+                new VehículosKAR().setVisible(true);
             }
         });
     }

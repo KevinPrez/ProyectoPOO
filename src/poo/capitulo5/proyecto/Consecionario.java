@@ -5,14 +5,19 @@
  */
 package poo.capitulo5.proyecto;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author pc ponce
  */
 public class Consecionario {
-    private String nombre;
-    private String ubicacion;
-
+    private String nombre = "VehículosKAR";
+    private String ubicacion = "Av. Amazonas y 10 de Agosto.";
+    private String telefono = "1800 - VEHICUKAR";
+    private ArrayList <Vehiculo> vehiculos = new ArrayList <>();
+    
+    
     public String getNombre() {
         return nombre;
     }
@@ -30,8 +35,6 @@ public class Consecionario {
     }
     
     public String mostrarInfo(){
-        String info="";
-        
-        return info;
+         return "Encuentranos en: " + ubicacion + "\nContáctanos al: " + telefono;
     }
 }

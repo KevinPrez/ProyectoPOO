@@ -12,6 +12,14 @@ package poo.capitulo5.proyecto;
 public class Bicicleta extends VehiculoSinMotor{
     private String material;
 
+    public Bicicleta(String material, String tipo, String marca, String color, double precio) {
+        this.material = material;
+        this.tipo = tipo;
+        this.marca = marca;
+        this.color = color;
+        this.precio = precio;
+    }
+
     public String getMaterial() {
         return material;
     }
