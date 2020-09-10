@@ -11,16 +11,16 @@ package poo.capitulo5.proyecto;
  */
 public class FrmMoto extends javax.swing.JFrame {
 
+    Motocicleta moto1 = new Motocicleta(2021, "Ninja", "Sport", "verde", 12000.00, "Kawasaki");
+    Motocicleta moto2 = new Motocicleta(2020, "Diavel", "Monster", "negra", 9000.00, "Ducati");
+    Motocicleta moto3 = new Motocicleta(2020, "Road King", "Touring", "Azul", 15000.00, "Harley Davidson");
+
     /**
      * Creates new form GUIbici
      */
     public FrmMoto() {
         initComponents();
-        
-        Motocicleta moto1=new Motocicleta(2021,"Ninja","Sport","verde",12000.00,"Kawasaki");
-        Motocicleta moto2=new Motocicleta(2020,"Diavel","Monster","negra",9000.00,"Ducati");
-        Motocicleta moto3=new Motocicleta(2020,"Road King","Touring","Azul",15000.00,"Harley Davidson");
-        
+
     }
 
     /**
@@ -81,7 +81,6 @@ public class FrmMoto extends javax.swing.JFrame {
 //                ;
 //            } 
 //        });
-        
 //        FrmMoto.this.setVisible(false);
     /**
      * @param args the command line arguments

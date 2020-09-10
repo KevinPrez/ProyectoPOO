@@ -22,6 +22,7 @@ public class Automovil extends VehiculoConMotor {
             this.marca=marca;
             this.precio=precio;
             }
+    
     public int getNumAsientos() {
         return numAsientos;
     }

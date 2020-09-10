@@ -11,15 +11,16 @@ package poo.capitulo5.proyecto;
  */
 public class FrmAuto extends javax.swing.JFrame {
 
+    Automovil auto1 = new Automovil(2020, "Gol", 5, "Plateado", "Volkswagen", 16000.00);
+    Automovil auto2 = new Automovil(2019, "Crafter", 21, "Blanco", "Volkswagen", 63000.00);
+    Automovil auto3 = new Automovil(2020, "Jetta", 5, "Rojo", "Volkswagen", 19990.00);
+
     /**
      * Creates new form GUIauto
      */
     public FrmAuto() {
         initComponents();
-        Automovil auto1= new Automovil(2020, "Gol",5,"Plateado","Volkswagen", 16000.00);
-        Automovil auto2= new Automovil(2019, "Crafter",21,"Blanco","Volkswagen", 63000.00);
-        Automovil auto3= new Automovil(2020, "Jetta",5,"Rojo","Volkswagen", 19990.00);
-        
+
     }
 
     /**
@@ -87,7 +88,7 @@ public class FrmAuto extends javax.swing.JFrame {
 
     private void btnMostrarInfoBiciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarInfoBiciActionPerformed
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_btnMostrarInfoBiciActionPerformed
 
     /**

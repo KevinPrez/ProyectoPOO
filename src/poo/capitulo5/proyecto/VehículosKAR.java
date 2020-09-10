@@ -58,6 +58,7 @@ public class VehículosKAR extends javax.swing.JFrame {
         lblNombre = new javax.swing.JLabel();
         lblBienvenida = new javax.swing.JLabel();
         btnContinuar = new javax.swing.JButton();
+        lblInformaciondeContacto = new javax.swing.JLabel();
         lblFont = new javax.swing.JLabel();
 
         PanelPrincipal.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -142,6 +143,12 @@ public class VehículosKAR extends javax.swing.JFrame {
         });
         getContentPane().add(btnContinuar);
         btnContinuar.setBounds(330, 260, 170, 30);
+
+        lblInformaciondeContacto.setFont(new java.awt.Font("Wide Latin", 0, 7)); // NOI18N
+        lblInformaciondeContacto.setForeground(new java.awt.Color(255, 255, 255));
+        lblInformaciondeContacto.setText(new Consecionario().mostrarInfo());
+        getContentPane().add(lblInformaciondeContacto);
+        lblInformaciondeContacto.setBounds(20, 584, 530, 20);
 
         lblFont.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/imagen_entrada_proy01.jpg"))); // NOI18N
         getContentPane().add(lblFont);
@@ -257,6 +264,7 @@ public class VehículosKAR extends javax.swing.JFrame {
     private javax.swing.JLabel lblBienvenida;
     private javax.swing.JLabel lblEmail;
     private javax.swing.JLabel lblFont;
+    private javax.swing.JLabel lblInformaciondeContacto;
     private javax.swing.JLabel lblNombre;
     private javax.swing.JLabel lblNumCedula;
     private javax.swing.JLabel lblVehiculosKar;
