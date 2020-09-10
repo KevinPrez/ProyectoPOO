@@ -35,6 +35,6 @@ public class Consecionario {
     }
     
     public String mostrarInfo(){
-         return "Encuentranos en: " + ubicacion + "\nContáctanos al: " + telefono;
+         return "Encuentranos en: " + ubicacion + " Contáctanos al: " + telefono;
     }
 }

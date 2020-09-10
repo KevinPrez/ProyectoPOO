@@ -9,19 +9,23 @@ package poo.capitulo5.proyecto;
  *
  * @author pc ponce
  */
-public class Motocicleta extends VehiculoConMotor{
+public class Motocicleta extends VehiculoConMotor {
+
     private String categoria;
-    public Motocicleta(){
-        
+
+    public Motocicleta() {
+
     }
-    public Motocicleta(int año, String modelo, String categoria ,String color, double precio,String marca){
-        this.año=año;
-        this.modelo=modelo;
-        this.categoria=categoria;
-        this.color=color;
-        this.precio=precio;
-        this.marca=marca;
+
+    public Motocicleta(int año, String modelo, String categoria, String color, double precio, String marca) {
+        this.año = año;
+        this.modelo = modelo;
+        this.categoria = categoria;
+        this.color = color;
+        this.precio = precio;
+        this.marca = marca;
     }
+
     public String getCategoria() {
         return categoria;
     }
@@ -69,10 +73,10 @@ public class Motocicleta extends VehiculoConMotor{
     public void setPrecio(double precio) {
         this.precio = precio;
     }
-    
+
     @Override
-    public String presentarInfo(){
-        
-        return "*-Información de la moto-*" + super.presentarInfo()+"\nCategoría: "+categoria;
+    public String presentarInfo() {
+
+        return "*-Información de la moto-*" + super.presentarInfo() + "\nCategoría: " + categoria;
     }
 }

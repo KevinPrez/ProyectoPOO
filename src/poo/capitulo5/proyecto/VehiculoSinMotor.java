@@ -9,14 +9,14 @@ package poo.capitulo5.proyecto;
  *
  * @author pc ponce
  */
-public abstract class VehiculoSinMotor extends Vehiculo{
+public abstract class VehiculoSinMotor extends Vehiculo {
+
     protected String tipo;
-    
-    
+
     @Override
-    public String presentarInfo(){
-        String info = "La bicicleta es de tipo: "+tipo;
-        
+    public String presentarInfo() {
+        String info = "La bicicleta es de tipo: " + tipo;
+
         return info;
     }
 }

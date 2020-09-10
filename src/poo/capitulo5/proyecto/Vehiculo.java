@@ -10,10 +10,11 @@ package poo.capitulo5.proyecto;
  * @author pc ponce
  */
 public abstract class Vehiculo {
+
     protected String marca;
     protected String color;
     protected double precio;
-    
+
     public abstract String presentarInfo();
 
 }

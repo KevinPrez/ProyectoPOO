@@ -10,19 +10,22 @@ package poo.capitulo5.proyecto;
  * @author pc ponce
  */
 public class Automovil extends VehiculoConMotor {
+
     private int numAsientos;
-    public Automovil(){
-        
+
+    public Automovil() {
+
     }
-    public Automovil(int año, String modelo, int numAsientos, String color, String marca, double precio){
-            this.año=año;
-            this.modelo=modelo;
-            this.numAsientos=numAsientos;
-            this.color=color;
-            this.marca=marca;
-            this.precio=precio;
-            }
-    
+
+    public Automovil(int año, String modelo, int numAsientos, String color, String marca, double precio) {
+        this.año = año;
+        this.modelo = modelo;
+        this.numAsientos = numAsientos;
+        this.color = color;
+        this.marca = marca;
+        this.precio = precio;
+    }
+
     public int getNumAsientos() {
         return numAsientos;
     }
@@ -70,11 +73,11 @@ public class Automovil extends VehiculoConMotor {
     public void setPrecio(double precio) {
         this.precio = precio;
     }
-    
+
     @Override
-    public String presentarInfo(){
-        String info = super.presentarInfo()+"\nEl automóvil cuenta con: "+numAsientos+" asientos.";
-        
+    public String presentarInfo() {
+        String info = super.presentarInfo() + "\nEl automóvil cuenta con: " + numAsientos + " asientos.";
+
         return info;
     }
 }

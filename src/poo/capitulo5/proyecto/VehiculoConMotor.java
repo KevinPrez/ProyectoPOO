@@ -10,13 +10,14 @@ package poo.capitulo5.proyecto;
  * @author pc ponce
  */
 public abstract class VehiculoConMotor extends Vehiculo {
+
     protected int año;
     protected String modelo;
-    
+
     @Override
-    public String presentarInfo(){
-        
-        return "Modelo: " + modelo +"\nAño: "+ año + "\nMarca " + marca
+    public String presentarInfo() {
+
+        return "Modelo: " + modelo + "\nAño: " + año + "\nMarca " + marca
                 + "\nColor " + color + "\nPrecio " + precio;
     }
 }
