@@ -46,21 +46,21 @@ public class FrmMoto extends javax.swing.JFrame {
         cmbMotocicletas.setForeground(new java.awt.Color(255, 255, 255));
         cmbMotocicletas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una motocicleta..." }));
         getContentPane().add(cmbMotocicletas);
-        cmbMotocicletas.setBounds(90, 80, 330, 40);
+        cmbMotocicletas.setBounds(90, 90, 330, 40);
 
         btnMostrarInfoMoto.setBackground(new java.awt.Color(0, 0, 0));
         btnMostrarInfoMoto.setFont(new java.awt.Font("Wide Latin", 0, 12)); // NOI18N
         btnMostrarInfoMoto.setForeground(new java.awt.Color(255, 255, 255));
         btnMostrarInfoMoto.setText("Ver info de la moto");
         getContentPane().add(btnMostrarInfoMoto);
-        btnMostrarInfoMoto.setBounds(140, 140, 230, 30);
+        btnMostrarInfoMoto.setBounds(140, 150, 230, 30);
 
         btnReservarMoto.setBackground(new java.awt.Color(0, 0, 0));
         btnReservarMoto.setFont(new java.awt.Font("Wide Latin", 0, 12)); // NOI18N
         btnReservarMoto.setForeground(new java.awt.Color(255, 255, 255));
         btnReservarMoto.setText("Reservar");
         getContentPane().add(btnReservarMoto);
-        btnReservarMoto.setBounds(190, 190, 130, 40);
+        btnReservarMoto.setBounds(190, 200, 130, 40);
 
         lblFondoMotocicleta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Fondo Interfaz Motocicleta.png"))); // NOI18N
         getContentPane().add(lblFondoMotocicleta);
