@@ -27,45 +27,48 @@ public class FrmMoto extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblMoto = new javax.swing.JLabel();
-        btnRegresar = new javax.swing.JButton();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        btnMostrarInfoMoto = new javax.swing.JButton();
+        btnReservarMoto = new javax.swing.JButton();
+        lblFondoMotocicleta = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Motocicletas");
+        setBackground(new java.awt.Color(0, 0, 0));
+        setMaximumSize(new java.awt.Dimension(505, 602));
+        setMinimumSize(new java.awt.Dimension(505, 602));
+        setPreferredSize(new java.awt.Dimension(505, 602));
+        setResizable(false);
+        getContentPane().setLayout(null);
 
-        lblMoto.setText("Motocicletas");
+        jComboBox1.setBackground(new java.awt.Color(0, 0, 0));
+        jComboBox1.setFont(new java.awt.Font("Wide Latin", 0, 12)); // NOI18N
+        jComboBox1.setForeground(new java.awt.Color(255, 255, 255));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una motocicleta..." }));
+        getContentPane().add(jComboBox1);
+        jComboBox1.setBounds(90, 80, 330, 40);
 
-        btnRegresar.setText("Regresar");
-        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegresarActionPerformed(evt);
-            }
-        });
+        btnMostrarInfoMoto.setBackground(new java.awt.Color(0, 0, 0));
+        btnMostrarInfoMoto.setFont(new java.awt.Font("Wide Latin", 0, 12)); // NOI18N
+        btnMostrarInfoMoto.setForeground(new java.awt.Color(255, 255, 255));
+        btnMostrarInfoMoto.setText("Ver info de la moto");
+        getContentPane().add(btnMostrarInfoMoto);
+        btnMostrarInfoMoto.setBounds(140, 140, 230, 30);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(151, 151, 151)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnRegresar)
-                    .addComponent(lblMoto))
-                .addContainerGap(172, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblMoto)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 226, Short.MAX_VALUE)
-                .addComponent(btnRegresar)
-                .addGap(26, 26, 26))
-        );
+        btnReservarMoto.setBackground(new java.awt.Color(0, 0, 0));
+        btnReservarMoto.setFont(new java.awt.Font("Wide Latin", 0, 12)); // NOI18N
+        btnReservarMoto.setForeground(new java.awt.Color(255, 255, 255));
+        btnReservarMoto.setText("Reservar");
+        getContentPane().add(btnReservarMoto);
+        btnReservarMoto.setBounds(190, 190, 130, 40);
+
+        lblFondoMotocicleta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Fondo Interfaz Motocicleta.png"))); // NOI18N
+        getContentPane().add(lblFondoMotocicleta);
+        lblFondoMotocicleta.setBounds(0, 0, 510, 600);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
 //        java.awt.EventQueue.invokeLater(new Runnable() {
 //            @Override
 //            public void run() {
@@ -74,9 +77,7 @@ public class FrmMoto extends javax.swing.JFrame {
 //            } 
 //        });
         
-        FrmMoto.this.setVisible(false);
-    }//GEN-LAST:event_btnRegresarActionPerformed
-
+//        FrmMoto.this.setVisible(false);
     /**
      * @param args the command line arguments
      */
@@ -114,7 +115,9 @@ public class FrmMoto extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnRegresar;
-    private javax.swing.JLabel lblMoto;
+    private javax.swing.JButton btnMostrarInfoMoto;
+    private javax.swing.JButton btnReservarMoto;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JLabel lblFondoMotocicleta;
     // End of variables declaration//GEN-END:variables
 }
