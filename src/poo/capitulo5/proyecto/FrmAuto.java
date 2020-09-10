@@ -38,6 +38,7 @@ public class FrmAuto extends javax.swing.JFrame {
         setMaximumSize(new java.awt.Dimension(505, 602));
         setMinimumSize(new java.awt.Dimension(505, 602));
         setPreferredSize(new java.awt.Dimension(505, 602));
+        setResizable(false);
         getContentPane().setLayout(null);
 
         lblAutomovil.setBackground(new java.awt.Color(0, 0, 0));
