@@ -27,7 +27,7 @@ public class FrmMoto extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jComboBox1 = new javax.swing.JComboBox<>();
+        cmbMotocicletas = new javax.swing.JComboBox<>();
         btnMostrarInfoMoto = new javax.swing.JButton();
         btnReservarMoto = new javax.swing.JButton();
         lblFondoMotocicleta = new javax.swing.JLabel();
@@ -41,12 +41,12 @@ public class FrmMoto extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(null);
 
-        jComboBox1.setBackground(new java.awt.Color(0, 0, 0));
-        jComboBox1.setFont(new java.awt.Font("Wide Latin", 0, 12)); // NOI18N
-        jComboBox1.setForeground(new java.awt.Color(255, 255, 255));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una motocicleta..." }));
-        getContentPane().add(jComboBox1);
-        jComboBox1.setBounds(90, 80, 330, 40);
+        cmbMotocicletas.setBackground(new java.awt.Color(0, 0, 0));
+        cmbMotocicletas.setFont(new java.awt.Font("Wide Latin", 0, 12)); // NOI18N
+        cmbMotocicletas.setForeground(new java.awt.Color(255, 255, 255));
+        cmbMotocicletas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una motocicleta..." }));
+        getContentPane().add(cmbMotocicletas);
+        cmbMotocicletas.setBounds(90, 80, 330, 40);
 
         btnMostrarInfoMoto.setBackground(new java.awt.Color(0, 0, 0));
         btnMostrarInfoMoto.setFont(new java.awt.Font("Wide Latin", 0, 12)); // NOI18N
@@ -117,7 +117,7 @@ public class FrmMoto extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnMostrarInfoMoto;
     private javax.swing.JButton btnReservarMoto;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> cmbMotocicletas;
     private javax.swing.JLabel lblFondoMotocicleta;
     // End of variables declaration//GEN-END:variables
 }
