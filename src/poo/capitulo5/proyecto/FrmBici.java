@@ -33,7 +33,8 @@ public class FrmBici extends javax.swing.JFrame {
         lblBicicleta = new javax.swing.JLabel();
         lblFondoBicicleta = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Bicicletas");
         setMaximumSize(new java.awt.Dimension(505, 602));
         setMinimumSize(new java.awt.Dimension(505, 602));
         getContentPane().setLayout(null);
@@ -68,7 +69,7 @@ public class FrmBici extends javax.swing.JFrame {
 
         lblFondoBicicleta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Fondo Interfaz Bicicleta.png"))); // NOI18N
         getContentPane().add(lblFondoBicicleta);
-        lblFondoBicicleta.setBounds(0, 0, 500, 600);
+        lblFondoBicicleta.setBounds(0, 0, 510, 600);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
