@@ -92,7 +92,7 @@ public class VehículosKAR extends javax.swing.JFrame {
         cmbVehiculo.setFont(new java.awt.Font("Wide Latin", 2, 14)); // NOI18N
         cmbVehiculo.setForeground(new java.awt.Color(255, 255, 255));
         cmbVehiculo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Haga su elección:", "Auto", "Motocicleta", "Bicicleta" }));
-        cmbVehiculo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        cmbVehiculo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         cmbVehiculo.setOpaque(false);
         getContentPane().add(cmbVehiculo);
         cmbVehiculo.setBounds(60, 260, 230, 30);
@@ -134,7 +134,7 @@ public class VehículosKAR extends javax.swing.JFrame {
         btnContinuar.setFont(new java.awt.Font("Wide Latin", 0, 14)); // NOI18N
         btnContinuar.setForeground(new java.awt.Color(255, 255, 255));
         btnContinuar.setText("Continuar");
-        btnContinuar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnContinuar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnContinuar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnContinuarActionPerformed(evt);
