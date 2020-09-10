@@ -16,6 +16,11 @@ public class FrmMoto extends javax.swing.JFrame {
      */
     public FrmMoto() {
         initComponents();
+        
+        Motocicleta moto1=new Motocicleta(2021,"Ninja","Sport","verde",12000.00,"Kawasaki");
+        Motocicleta moto2=new Motocicleta(2020,"Diavel","Monster","negra",9000.00,"Ducati");
+        Motocicleta moto3=new Motocicleta(2020,"Road King","Touring","Azul",15000.00,"Harley Davidson");
+        
     }
 
     /**
