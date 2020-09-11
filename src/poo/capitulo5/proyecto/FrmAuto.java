@@ -50,7 +50,7 @@ public class FrmAuto extends javax.swing.JFrame {
         btnReservarAuto = new javax.swing.JButton();
         panelInfoAuto = new javax.swing.JPanel();
         lblImgCarro = new javax.swing.JLabel();
-        btnCerrarInfo = new javax.swing.JButton();
+        btnCerrarInfoAuto = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         txaInfoCarro = new javax.swing.JTextArea();
         lblFondoAuto = new javax.swing.JLabel();
@@ -62,18 +62,18 @@ public class FrmAuto extends javax.swing.JFrame {
         getContentPane().setLayout(null);
 
         lblAutomovil.setBackground(new java.awt.Color(0, 0, 0));
-        lblAutomovil.setFont(new java.awt.Font("Wide Latin", 0, 36)); // NOI18N
+        lblAutomovil.setFont(new java.awt.Font("Wide Latin", 0, 33)); // NOI18N
         lblAutomovil.setForeground(new java.awt.Color(255, 255, 255));
-        lblAutomovil.setText("Automóviles");
+        lblAutomovil.setText("AUTOMÓVILES");
         getContentPane().add(lblAutomovil);
-        lblAutomovil.setBounds(50, 30, 410, 70);
+        lblAutomovil.setBounds(10, 30, 490, 50);
 
         cmbAutomoviles.setBackground(new java.awt.Color(0, 0, 0));
         cmbAutomoviles.setFont(new java.awt.Font("Wide Latin", 0, 12)); // NOI18N
         cmbAutomoviles.setForeground(new java.awt.Color(255, 255, 255));
         cmbAutomoviles.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione un automóvil...", "Crafter", "Gol", "Jetta" }));
         getContentPane().add(cmbAutomoviles);
-        cmbAutomoviles.setBounds(90, 120, 330, 40);
+        cmbAutomoviles.setBounds(90, 100, 330, 40);
 
         btnMostrarInfoAuto.setBackground(new java.awt.Color(0, 0, 0));
         btnMostrarInfoAuto.setFont(new java.awt.Font("Wide Latin", 0, 12)); // NOI18N
@@ -85,7 +85,7 @@ public class FrmAuto extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnMostrarInfoAuto);
-        btnMostrarInfoAuto.setBounds(140, 180, 230, 30);
+        btnMostrarInfoAuto.setBounds(140, 160, 230, 30);
 
         btnReservarAuto.setBackground(new java.awt.Color(0, 0, 0));
         btnReservarAuto.setFont(new java.awt.Font("Wide Latin", 0, 12)); // NOI18N
@@ -97,25 +97,25 @@ public class FrmAuto extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnReservarAuto);
-        btnReservarAuto.setBounds(190, 220, 130, 40);
+        btnReservarAuto.setBounds(190, 210, 130, 40);
 
         panelInfoAuto.setBackground(new java.awt.Color(102, 102, 102));
         panelInfoAuto.setBorder(new javax.swing.border.MatteBorder(null));
         panelInfoAuto.setLayout(null);
         panelInfoAuto.add(lblImgCarro);
-        lblImgCarro.setBounds(230, 20, 210, 200);
+        lblImgCarro.setBounds(230, 20, 220, 200);
 
-        btnCerrarInfo.setBackground(new java.awt.Color(102, 102, 102));
-        btnCerrarInfo.setFont(new java.awt.Font("Wide Latin", 0, 14)); // NOI18N
-        btnCerrarInfo.setForeground(new java.awt.Color(255, 255, 255));
-        btnCerrarInfo.setText("Cerrar");
-        btnCerrarInfo.addActionListener(new java.awt.event.ActionListener() {
+        btnCerrarInfoAuto.setBackground(new java.awt.Color(102, 102, 102));
+        btnCerrarInfoAuto.setFont(new java.awt.Font("Wide Latin", 0, 14)); // NOI18N
+        btnCerrarInfoAuto.setForeground(new java.awt.Color(255, 255, 255));
+        btnCerrarInfoAuto.setText("Cerrar");
+        btnCerrarInfoAuto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCerrarInfoActionPerformed(evt);
+                btnCerrarInfoAutoActionPerformed(evt);
             }
         });
-        panelInfoAuto.add(btnCerrarInfo);
-        btnCerrarInfo.setBounds(160, 230, 130, 40);
+        panelInfoAuto.add(btnCerrarInfoAuto);
+        btnCerrarInfoAuto.setBounds(160, 230, 130, 40);
 
         txaInfoCarro.setBackground(new java.awt.Color(204, 204, 204));
         txaInfoCarro.setColumns(20);
@@ -168,10 +168,10 @@ public class FrmAuto extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnReservarAutoActionPerformed
 
-    private void btnCerrarInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarInfoActionPerformed
+    private void btnCerrarInfoAutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarInfoAutoActionPerformed
         panelInfoAuto.setVisible(false);
         cmbAutomoviles.setSelectedIndex(0);
-    }//GEN-LAST:event_btnCerrarInfoActionPerformed
+    }//GEN-LAST:event_btnCerrarInfoAutoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -210,7 +210,7 @@ public class FrmAuto extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCerrarInfo;
+    private javax.swing.JButton btnCerrarInfoAuto;
     private javax.swing.JButton btnMostrarInfoAuto;
     private javax.swing.JButton btnReservarAuto;
     private javax.swing.JComboBox<String> cmbAutomoviles;

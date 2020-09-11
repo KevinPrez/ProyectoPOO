@@ -5,22 +5,34 @@
  */
 package poo.capitulo5.proyecto;
 
+import java.awt.Image;
+import java.util.ArrayList;
+import java.util.Collections;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author pc ponce
  */
 public class FrmBici extends javax.swing.JFrame {
-
-    Bicicleta bici1 = new Bicicleta("Aluminio", "SpeedFox", "Gris", "BMC Bikes", 10499.00);
-    Bicicleta bici2 = new Bicicleta("Fibra de carbono", "S-Works Turbo Levo", "Rojo", "Specialized", 11600.00);
-    Bicicleta bici3 = new Bicicleta("Acero Inosidable", "Rallon M LTD", "Verde", "Orbea", 1200.00);
     
+    Bicicleta bici1 = new Bicicleta("Acero Inosidable", "Rallon M LTD", "Verde", "Orbea", 1200.00);
+    Bicicleta bici2 = new Bicicleta("Fibra de carbono", "S-Works Turbo Levo", "Rojo", "Specialized", 11600.00);
+    Bicicleta bici3 = new Bicicleta("Aluminio", "SpeedFox", "Gris", "BMC Bikes", 10499.00);
+
+    ImageIcon Rallon = new ImageIcon(getClass().getResource("/Bicicletas/Rallon M LTD Verde.jpg"));
+    ImageIcon Turbo = new ImageIcon(getClass().getResource("/Bicicletas/S-Works Turbo Levo Rojo.jpg"));
+    ImageIcon SpeedFox = new ImageIcon(getClass().getResource("/Bicicletas/SpeedFox Gris.jpg"));
     /**
      * Creates new form GUImoto
      */
     public FrmBici() {
         initComponents();
-
+        
+        panelInfoBici.setVisible(false);
+        
     }
 
     /**
@@ -36,6 +48,11 @@ public class FrmBici extends javax.swing.JFrame {
         btnMostrarInfoBici = new javax.swing.JButton();
         cmbBicicletas = new javax.swing.JComboBox<>();
         lblBicicleta = new javax.swing.JLabel();
+        panelInfoBici = new javax.swing.JPanel();
+        lblImgBici = new javax.swing.JLabel();
+        btnCerrarInfo = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txaInfoBici = new javax.swing.JTextArea();
         lblFondoBicicleta = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -49,35 +66,107 @@ public class FrmBici extends javax.swing.JFrame {
         btnReservarBici.setForeground(new java.awt.Color(255, 255, 255));
         btnReservarBici.setText("Reservar");
         getContentPane().add(btnReservarBici);
-        btnReservarBici.setBounds(190, 230, 130, 40);
+        btnReservarBici.setBounds(180, 200, 130, 40);
 
         btnMostrarInfoBici.setBackground(new java.awt.Color(0, 0, 0));
         btnMostrarInfoBici.setFont(new java.awt.Font("Wide Latin", 0, 12)); // NOI18N
         btnMostrarInfoBici.setForeground(new java.awt.Color(255, 255, 255));
         btnMostrarInfoBici.setText("Ver info de la bici");
+        btnMostrarInfoBici.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMostrarInfoBiciActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnMostrarInfoBici);
-        btnMostrarInfoBici.setBounds(140, 180, 230, 30);
+        btnMostrarInfoBici.setBounds(130, 150, 230, 30);
 
         cmbBicicletas.setBackground(new java.awt.Color(0, 0, 0));
         cmbBicicletas.setFont(new java.awt.Font("Wide Latin", 0, 12)); // NOI18N
         cmbBicicletas.setForeground(new java.awt.Color(255, 255, 255));
-        cmbBicicletas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una bicicleta..." }));
+        cmbBicicletas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una bicicleta...", "Rallon M LTD", "S-Works Turbo Levo", "SpeedFox" }));
         getContentPane().add(cmbBicicletas);
-        cmbBicicletas.setBounds(90, 120, 330, 40);
+        cmbBicicletas.setBounds(80, 90, 330, 40);
 
         lblBicicleta.setBackground(new java.awt.Color(0, 0, 0));
         lblBicicleta.setFont(new java.awt.Font("Wide Latin", 0, 36)); // NOI18N
         lblBicicleta.setForeground(new java.awt.Color(255, 255, 255));
-        lblBicicleta.setText("Bicicletas");
+        lblBicicleta.setText("BICICLETAS");
         getContentPane().add(lblBicicleta);
-        lblBicicleta.setBounds(100, 30, 310, 70);
+        lblBicicleta.setBounds(30, 20, 450, 60);
 
-        lblFondoBicicleta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Fondo Interfaz Bicicleta.png"))); // NOI18N
+        panelInfoBici.setBackground(new java.awt.Color(102, 102, 102));
+        panelInfoBici.setBorder(new javax.swing.border.MatteBorder(null));
+        panelInfoBici.setLayout(null);
+        panelInfoBici.add(lblImgBici);
+        lblImgBici.setBounds(240, 20, 210, 200);
+
+        btnCerrarInfo.setBackground(new java.awt.Color(102, 102, 102));
+        btnCerrarInfo.setFont(new java.awt.Font("Wide Latin", 0, 14)); // NOI18N
+        btnCerrarInfo.setForeground(new java.awt.Color(255, 255, 255));
+        btnCerrarInfo.setText("Cerrar");
+        btnCerrarInfo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCerrarInfoActionPerformed(evt);
+            }
+        });
+        panelInfoBici.add(btnCerrarInfo);
+        btnCerrarInfo.setBounds(160, 230, 130, 40);
+
+        txaInfoBici.setBackground(new java.awt.Color(204, 204, 204));
+        txaInfoBici.setColumns(20);
+        txaInfoBici.setFont(new java.awt.Font("Wide Latin", 0, 10)); // NOI18N
+        txaInfoBici.setRows(5);
+        jScrollPane1.setViewportView(txaInfoBici);
+
+        panelInfoBici.add(jScrollPane1);
+        jScrollPane1.setBounds(10, 20, 220, 200);
+
+        getContentPane().add(panelInfoBici);
+        panelInfoBici.setBounds(10, 270, 470, 280);
+
+        lblFondoBicicleta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fondos/Fondo Interfaz Bicicleta.png"))); // NOI18N
         getContentPane().add(lblFondoBicicleta);
         lblFondoBicicleta.setBounds(0, 0, 510, 600);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnCerrarInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarInfoActionPerformed
+        panelInfoBici.setVisible(false);
+        cmbBicicletas.setSelectedIndex(0);
+    }//GEN-LAST:event_btnCerrarInfoActionPerformed
+
+    private void btnMostrarInfoBiciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarInfoBiciActionPerformed
+        int index = cmbBicicletas.getSelectedIndex();
+        
+        //switch para mostar solo el vehiculo solicitado
+        switch(index){
+            case 1 :
+                panelInfoBici.setVisible(true);
+                Icon imgRallon = new ImageIcon(Rallon.getImage().getScaledInstance(lblImgBici.getWidth(), lblImgBici.getHeight(), Image.SCALE_DEFAULT));
+                lblImgBici.setIcon(imgRallon);
+                txaInfoBici.setText(bici1.presentarInfo());
+            
+                break;
+            case 2:
+                panelInfoBici.setVisible(true);
+                Icon imgTurbo = new ImageIcon(Turbo.getImage().getScaledInstance(lblImgBici.getWidth(), lblImgBici.getHeight(), Image.SCALE_DEFAULT));
+                lblImgBici.setIcon(imgTurbo);
+                txaInfoBici.setText(bici2.presentarInfo());
+                
+                break;
+            case 3:
+                panelInfoBici.setVisible(true);
+                Icon imgSpeedFox = new ImageIcon(SpeedFox.getImage().getScaledInstance(lblImgBici.getWidth(), lblImgBici.getHeight(), Image.SCALE_DEFAULT));
+                lblImgBici.setIcon(imgSpeedFox);
+                txaInfoBici.setText(bici3.presentarInfo());
+                
+                break;
+            default :
+                JOptionPane.showMessageDialog(rootPane, "Seleccione una bicicleta para continuar ");
+                break;
+        }
+    }//GEN-LAST:event_btnMostrarInfoBiciActionPerformed
 
     /**
      * @param args the command line arguments
@@ -116,10 +205,15 @@ public class FrmBici extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCerrarInfo;
     private javax.swing.JButton btnMostrarInfoBici;
     private javax.swing.JButton btnReservarBici;
     private javax.swing.JComboBox<String> cmbBicicletas;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblBicicleta;
     private javax.swing.JLabel lblFondoBicicleta;
+    private javax.swing.JLabel lblImgBici;
+    private javax.swing.JPanel panelInfoBici;
+    private javax.swing.JTextArea txaInfoBici;
     // End of variables declaration//GEN-END:variables
 }

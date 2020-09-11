@@ -48,7 +48,7 @@ public class FrmMoto extends javax.swing.JFrame {
         btnReservarMoto = new javax.swing.JButton();
         panelinfoMoto = new javax.swing.JPanel();
         lblfotoMoto = new javax.swing.JLabel();
-        btninfoMoto = new javax.swing.JButton();
+        btnCerrarInfoMoto = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         txainfoMoto = new javax.swing.JTextArea();
         lblFondoMotocicleta = new javax.swing.JLabel();
@@ -97,19 +97,19 @@ public class FrmMoto extends javax.swing.JFrame {
         panelinfoMoto.setBorder(new javax.swing.border.MatteBorder(null));
         panelinfoMoto.setLayout(null);
         panelinfoMoto.add(lblfotoMoto);
-        lblfotoMoto.setBounds(240, 10, 200, 230);
+        lblfotoMoto.setBounds(240, 10, 210, 230);
 
-        btninfoMoto.setBackground(new java.awt.Color(153, 153, 153));
-        btninfoMoto.setFont(new java.awt.Font("Wide Latin", 0, 14)); // NOI18N
-        btninfoMoto.setForeground(new java.awt.Color(255, 255, 255));
-        btninfoMoto.setText("Cerrar");
-        btninfoMoto.addActionListener(new java.awt.event.ActionListener() {
+        btnCerrarInfoMoto.setBackground(new java.awt.Color(153, 153, 153));
+        btnCerrarInfoMoto.setFont(new java.awt.Font("Wide Latin", 0, 14)); // NOI18N
+        btnCerrarInfoMoto.setForeground(new java.awt.Color(255, 255, 255));
+        btnCerrarInfoMoto.setText("Cerrar");
+        btnCerrarInfoMoto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btninfoMotoActionPerformed(evt);
+                btnCerrarInfoMotoActionPerformed(evt);
             }
         });
-        panelinfoMoto.add(btninfoMoto);
-        btninfoMoto.setBounds(170, 250, 120, 40);
+        panelinfoMoto.add(btnCerrarInfoMoto);
+        btnCerrarInfoMoto.setBounds(170, 250, 120, 40);
 
         txainfoMoto.setBackground(new java.awt.Color(204, 204, 204));
         txainfoMoto.setColumns(20);
@@ -121,7 +121,7 @@ public class FrmMoto extends javax.swing.JFrame {
         jScrollPane1.setBounds(10, 10, 220, 230);
 
         getContentPane().add(panelinfoMoto);
-        panelinfoMoto.setBounds(20, 250, 450, 300);
+        panelinfoMoto.setBounds(20, 250, 460, 310);
 
         lblFondoMotocicleta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fondos/Fondo Interfaz Motocicleta.png"))); // NOI18N
         getContentPane().add(lblFondoMotocicleta);
@@ -163,11 +163,11 @@ public class FrmMoto extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnMostrarInfoMotoActionPerformed
 
-    private void btninfoMotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btninfoMotoActionPerformed
+    private void btnCerrarInfoMotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarInfoMotoActionPerformed
         // TODO add your handling code here:
             panelinfoMoto.setVisible(false);
             cmbMotocicletas.setSelectedIndex(0);
-    }//GEN-LAST:event_btninfoMotoActionPerformed
+    }//GEN-LAST:event_btnCerrarInfoMotoActionPerformed
 
 //        java.awt.EventQueue.invokeLater(new Runnable() {
 //            @Override
@@ -215,9 +215,9 @@ public class FrmMoto extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCerrarInfoMoto;
     private javax.swing.JButton btnMostrarInfoMoto;
     private javax.swing.JButton btnReservarMoto;
-    private javax.swing.JButton btninfoMoto;
     private javax.swing.JComboBox<String> cmbMotocicletas;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblFondoMotocicleta;
