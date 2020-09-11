@@ -9,10 +9,13 @@ package poo.capitulo5.proyecto;
  *
  * @author pc ponce
  */
-public class Bicicleta extends VehiculoSinMotor{
+public class Bicicleta extends VehiculoSinMotor {
+
     private String material;
-    public Bicicleta(){       
+
+    public Bicicleta() {
     }
+
     public Bicicleta(String material, String tipo, String color, String marca, double precio) {
         this.material = material;
         this.tipo = tipo;
@@ -60,11 +63,11 @@ public class Bicicleta extends VehiculoSinMotor{
     public void setPrecio(double precio) {
         this.precio = precio;
     }
-    
+
     @Override
-    public String presentarInfo(){
-        String info = super.presentarInfo()+"\nMaterial: "+material;
+    public String presentarInfo() {
         
-        return info;
+        return "*-Informacion de la bici-*" + super.presentarInfo() + 
+                "\nMaterial: " + material + "\nPrecio: " + precio;
     }
 }

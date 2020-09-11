@@ -17,7 +17,7 @@ public abstract class VehiculoConMotor extends Vehiculo {
     @Override
     public String presentarInfo() {
 
-        return "Modelo: " + modelo + "\nAño: " + año + "\nMarca " + marca
-                + "\nColor " + color + "\nPrecio " + precio;
+        return "\nModelo: " + modelo + "\nAño: " + año + "\nMarca " + marca
+                + "\nColor " + color;
     }
 }

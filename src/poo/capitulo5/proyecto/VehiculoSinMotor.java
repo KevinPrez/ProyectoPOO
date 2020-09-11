@@ -15,8 +15,7 @@ public abstract class VehiculoSinMotor extends Vehiculo {
 
     @Override
     public String presentarInfo() {
-        String info = "La bicicleta es de tipo: " + tipo;
-
-        return info;
+         
+        return "\nMarca " + marca + "\nColor " + color + "Tipo: " + tipo;
     }
 }

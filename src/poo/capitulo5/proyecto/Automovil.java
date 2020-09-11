@@ -76,8 +76,8 @@ public class Automovil extends VehiculoConMotor {
 
     @Override
     public String presentarInfo() {
-        String info = super.presentarInfo() + "\nEl automóvil cuenta con: " + numAsientos + " asientos.";
-
-        return info;
+       
+        return "*-Información del auto-*" + super.presentarInfo() + 
+                "\nAsientos: " + numAsientos + "\nPrecio " + precio;
     }
 }
