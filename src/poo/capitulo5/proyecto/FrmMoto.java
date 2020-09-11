@@ -5,21 +5,32 @@
  */
 package poo.capitulo5.proyecto;
 
+import java.awt.Image;
+import java.util.ArrayList;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author pc ponce
  */
 public class FrmMoto extends javax.swing.JFrame {
 
-    Motocicleta moto1 = new Motocicleta(2021, "Ninja", "Sport", "verde", 12000.00, "Kawasaki");
-    Motocicleta moto2 = new Motocicleta(2020, "Diavel", "Monster", "negra", 9000.00, "Ducati");
-    Motocicleta moto3 = new Motocicleta(2020, "Road King", "Touring", "Azul", 15000.00, "Harley Davidson");
+    Motocicleta moto1 = new Motocicleta(2020, "Diavel", "Monster", "negra", 9000.00, "Ducati");
+    Motocicleta moto2 = new Motocicleta(2020, "Road King", "Touring", "Azul", 15000.00, "Harley Davidson");
+    Motocicleta moto3 = new Motocicleta(2021, "Ninja", "Sport", "verde", 12000.00, "Kawasaki");
+
+    ImageIcon diavel = new ImageIcon(getClass().getResource("/Motocicletas/Ducati Diavel Negra 2020.png"));
+    ImageIcon roadKing = new ImageIcon(getClass().getResource("/Motocicletas/Harley Davisons Road King Azul 2020.png"));
+    ImageIcon ninja = new ImageIcon(getClass().getResource("/Motocicletas/Kawasaki Ninja Verde 2021.jpg"));
 
     /**
      * Creates new form GUIbici
      */
     public FrmMoto() {
         initComponents();
+        panelinfoMoto.setVisible(false);
 
     }
 
@@ -35,6 +46,10 @@ public class FrmMoto extends javax.swing.JFrame {
         cmbMotocicletas = new javax.swing.JComboBox<>();
         btnMostrarInfoMoto = new javax.swing.JButton();
         btnReservarMoto = new javax.swing.JButton();
+        panelinfoMoto = new javax.swing.JPanel();
+        lblfotoMoto = new javax.swing.JLabel();
+        txainfoMoto = new java.awt.TextArea();
+        btninfoMoto = new javax.swing.JButton();
         lblFondoMotocicleta = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -49,7 +64,7 @@ public class FrmMoto extends javax.swing.JFrame {
         cmbMotocicletas.setBackground(new java.awt.Color(0, 0, 0));
         cmbMotocicletas.setFont(new java.awt.Font("Wide Latin", 0, 12)); // NOI18N
         cmbMotocicletas.setForeground(new java.awt.Color(255, 255, 255));
-        cmbMotocicletas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una motocicleta..." }));
+        cmbMotocicletas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una motocicleta...", "Diavel", "Road King", "Ninja" }));
         getContentPane().add(cmbMotocicletas);
         cmbMotocicletas.setBounds(90, 90, 330, 40);
 
@@ -57,6 +72,11 @@ public class FrmMoto extends javax.swing.JFrame {
         btnMostrarInfoMoto.setFont(new java.awt.Font("Wide Latin", 0, 12)); // NOI18N
         btnMostrarInfoMoto.setForeground(new java.awt.Color(255, 255, 255));
         btnMostrarInfoMoto.setText("Ver info de la moto");
+        btnMostrarInfoMoto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMostrarInfoMotoActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnMostrarInfoMoto);
         btnMostrarInfoMoto.setBounds(140, 150, 230, 30);
 
@@ -64,15 +84,85 @@ public class FrmMoto extends javax.swing.JFrame {
         btnReservarMoto.setFont(new java.awt.Font("Wide Latin", 0, 12)); // NOI18N
         btnReservarMoto.setForeground(new java.awt.Color(255, 255, 255));
         btnReservarMoto.setText("Reservar");
+        btnReservarMoto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnReservarMotoActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnReservarMoto);
         btnReservarMoto.setBounds(190, 200, 130, 40);
 
-        lblFondoMotocicleta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Fondo Interfaz Motocicleta.png"))); // NOI18N
+        panelinfoMoto.setBackground(new java.awt.Color(102, 102, 102));
+        panelinfoMoto.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        panelinfoMoto.setLayout(null);
+        panelinfoMoto.add(lblfotoMoto);
+        lblfotoMoto.setBounds(210, 20, 150, 180);
+
+        txainfoMoto.setFont(new java.awt.Font("Wide Latin", 0, 10)); // NOI18N
+        txainfoMoto.setForeground(new java.awt.Color(153, 153, 153));
+        panelinfoMoto.add(txainfoMoto);
+        txainfoMoto.setBounds(10, 20, 180, 190);
+
+        btninfoMoto.setBackground(new java.awt.Color(153, 153, 153));
+        btninfoMoto.setFont(new java.awt.Font("Wide Latin", 0, 10)); // NOI18N
+        btninfoMoto.setForeground(new java.awt.Color(255, 255, 255));
+        btninfoMoto.setText("Cerrar");
+        btninfoMoto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btninfoMotoActionPerformed(evt);
+            }
+        });
+        panelinfoMoto.add(btninfoMoto);
+        btninfoMoto.setBounds(120, 220, 100, 30);
+
+        getContentPane().add(panelinfoMoto);
+        panelinfoMoto.setBounds(50, 280, 380, 270);
+
+        lblFondoMotocicleta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fondos/Fondo Interfaz Motocicleta.png"))); // NOI18N
         getContentPane().add(lblFondoMotocicleta);
-        lblFondoMotocicleta.setBounds(0, 0, 510, 600);
+        lblFondoMotocicleta.setBounds(0, 0, 510, 620);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnReservarMotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReservarMotoActionPerformed
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_btnReservarMotoActionPerformed
+
+    private void btnMostrarInfoMotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarInfoMotoActionPerformed
+        // TODO add your handling code here:
+        int index = cmbMotocicletas.getSelectedIndex();
+
+        switch (index) {
+            case 1:
+                panelinfoMoto.setVisible(true);
+                Icon imgDiavel = new ImageIcon(diavel.getImage().getScaledInstance(lblfotoMoto.getWidth(), lblfotoMoto.getHeight(), Image.SCALE_DEFAULT));
+                lblfotoMoto.setIcon(imgDiavel);
+                txainfoMoto.setText(moto1.presentarInfo()); 
+                break;
+            case 2:
+                panelinfoMoto.setVisible(true);
+                Icon imgroadKing = new ImageIcon(roadKing.getImage().getScaledInstance(lblfotoMoto.getWidth(), lblfotoMoto.getHeight(), Image.SCALE_DEFAULT));
+                lblfotoMoto.setIcon(imgroadKing);
+                txainfoMoto.setText(moto2.presentarInfo());                
+                break;
+            case 3:
+                panelinfoMoto.setVisible(true); 
+                Icon imgninja = new ImageIcon(ninja.getImage().getScaledInstance(lblfotoMoto.getWidth(), lblfotoMoto.getHeight(), Image.SCALE_DEFAULT));
+                lblfotoMoto.setIcon(imgninja);
+                txainfoMoto.setText(moto3.presentarInfo());
+                break;
+            default:
+                JOptionPane.showMessageDialog(rootPane, "Seleccione una moto para ver su información");
+        }
+    }//GEN-LAST:event_btnMostrarInfoMotoActionPerformed
+
+    private void btninfoMotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btninfoMotoActionPerformed
+        // TODO add your handling code here:
+            panelinfoMoto.setVisible(false);
+            cmbMotocicletas.setSelectedIndex(0);
+    }//GEN-LAST:event_btninfoMotoActionPerformed
 
 //        java.awt.EventQueue.invokeLater(new Runnable() {
 //            @Override
@@ -116,13 +206,17 @@ public class FrmMoto extends javax.swing.JFrame {
                 new FrmMoto().setVisible(true);
             }
         });
-        
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnMostrarInfoMoto;
     private javax.swing.JButton btnReservarMoto;
+    private javax.swing.JButton btninfoMoto;
     private javax.swing.JComboBox<String> cmbMotocicletas;
     private javax.swing.JLabel lblFondoMotocicleta;
+    private javax.swing.JLabel lblfotoMoto;
+    private javax.swing.JPanel panelinfoMoto;
+    private java.awt.TextArea txainfoMoto;
     // End of variables declaration//GEN-END:variables
 }
