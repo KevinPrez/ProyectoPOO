@@ -68,6 +68,6 @@ public class Bicicleta extends VehiculoSinMotor {
     public String presentarInfo() {
         
         return "*-Informacion de la bici-*" + super.presentarInfo() + 
-                "\nMaterial: " + material + "\nPrecio: " + precio;
+                "\n\nMaterial: " + material + "\n\nPrecio: " + precio;
     }
 }

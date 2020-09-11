@@ -129,7 +129,7 @@ public class FrmAuto extends javax.swing.JFrame {
         getContentPane().add(panelInfoAuto);
         panelInfoAuto.setBounds(20, 270, 460, 280);
 
-        lblFondoAuto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Fondo Interfaz Automovil.jpg"))); // NOI18N
+        lblFondoAuto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fondos/Fondo Interfaz Automovil.jpg"))); // NOI18N
         getContentPane().add(lblFondoAuto);
         lblFondoAuto.setBounds(0, 0, 510, 610);
 

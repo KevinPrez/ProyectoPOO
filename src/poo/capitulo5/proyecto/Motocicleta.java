@@ -78,6 +78,6 @@ public class Motocicleta extends VehiculoConMotor {
     public String presentarInfo() {
 
         return "*-Información de la moto-*" + super.presentarInfo() + 
-                "\nCategoría: " + categoria + "\nPrecio " + precio;
+                "\n\nCategoría: " + categoria + "\n\nPrecio " + precio;
     }
 }
