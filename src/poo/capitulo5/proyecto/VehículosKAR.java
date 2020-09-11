@@ -150,7 +150,7 @@ public class VehículosKAR extends javax.swing.JFrame {
         getContentPane().add(lblInformaciondeContacto);
         lblInformaciondeContacto.setBounds(20, 580, 530, 20);
 
-        lblFont.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/imagen_entrada_proy01.jpg"))); // NOI18N
+        lblFont.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fondos/Fondo Interfaz Principal.jpg"))); // NOI18N
         getContentPane().add(lblFont);
         lblFont.setBounds(0, 0, 590, 640);
 
