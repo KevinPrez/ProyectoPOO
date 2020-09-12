@@ -197,6 +197,7 @@ public class VehículosKAR extends javax.swing.JFrame {
                         third.setVisible(true);
                         VehículosKAR.this.setVisible(false);
                         clientes.add(c1);
+                        third.clientesActuales=clientes;
                         limpiarInterfazPrincipal();
                     }
                     if (cmbVehiculo.getSelectedIndex() == 3) {
@@ -204,6 +205,7 @@ public class VehículosKAR extends javax.swing.JFrame {
                         fourth.setVisible(true);
                         VehículosKAR.this.setVisible(false);
                         clientes.add(c1);
+                        fourth.clientesActuales=clientes;
                         limpiarInterfazPrincipal();
                     }
                 } else {

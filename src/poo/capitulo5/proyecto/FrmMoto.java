@@ -22,11 +22,13 @@ public class FrmMoto extends javax.swing.JFrame {
     Motocicleta moto1 = new Motocicleta(2020, "Diavel", "Monster", "Negra", 9000.00, "Ducati");
     Motocicleta moto2 = new Motocicleta(2020, "Road King", "Touring", "Azul", 15000.00, "Harley Davidson");
     Motocicleta moto3 = new Motocicleta(2021, "Ninja", "Sport", "Verde", 12000.00, "Kawasaki");
-
+    Motocicleta[] motos={moto1,moto2,moto3};
+    
     ImageIcon diavel = new ImageIcon(getClass().getResource("/Motocicletas/Ducati Diavel Negra 2020.png"));
     ImageIcon roadKing = new ImageIcon(getClass().getResource("/Motocicletas/Harley Davidson Road King Azul 2020.png"));
     ImageIcon ninja = new ImageIcon(getClass().getResource("/Motocicletas/Kawasaki Ninja Verde 2021.jpg"));
-
+    
+    
     /**
      * Creates new form GUIbici
      */
@@ -134,6 +136,22 @@ public class FrmMoto extends javax.swing.JFrame {
 
     private void btnReservarMotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReservarMotoActionPerformed
         // TODO add your handling code here:
+        int index = cmbMotocicletas.getSelectedIndex() - 1;
+        Cliente clienteActual = clientesActuales.get(clientesActuales.size()-1);
+        int respuesta = JOptionPane.showConfirmDialog(rootPane, "¿Está seguro de querer reservar un " + motos[index].getModelo() + "?","Confirmación", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        if(respuesta == JOptionPane.YES_OPTION){
+            clienteActual.setVehiculoReservado(motos[index]);
+            JOptionPane.showMessageDialog(rootPane, clienteActual.toString()+
+                    "\n\nGracias por darnos el honor de ayudarle a escoger su próxima motocicleta.");
+            this.setVisible(false);
+            VehículosKAR interfaz = new VehículosKAR();
+            interfaz.clientes = clientesActuales;
+            interfaz.setVisible(true);
+        }
+        else{
+            cmbMotocicletas.setSelectedIndex(0);
+            panelinfoMoto.setVisible(false);
+        }        
 
     }//GEN-LAST:event_btnReservarMotoActionPerformed
 
