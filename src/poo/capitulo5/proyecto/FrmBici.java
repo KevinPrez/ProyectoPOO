@@ -18,6 +18,8 @@ import javax.swing.JOptionPane;
  */
 public class FrmBici extends javax.swing.JFrame {
     
+    ArrayList<Cliente> clientesActuales = new ArrayList<>();
+    
     Bicicleta bici1 = new Bicicleta("Acero Inosidable", "Rallon M LTD", "Verde", "Orbea", 1200.00);
     Bicicleta bici2 = new Bicicleta("Fibra de carbono", "S-Works Turbo Levo", "Rojo", "Specialized", 11600.00);
     Bicicleta bici3 = new Bicicleta("Aluminio", "SpeedFox", "Gris", "BMC Bikes", 10499.00);
@@ -32,7 +34,7 @@ public class FrmBici extends javax.swing.JFrame {
         initComponents();
         
         panelInfoBici.setVisible(false);
-        
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -59,6 +61,7 @@ public class FrmBici extends javax.swing.JFrame {
         setTitle("Bicicletas");
         setMaximumSize(new java.awt.Dimension(505, 602));
         setMinimumSize(new java.awt.Dimension(505, 602));
+        setResizable(false);
         getContentPane().setLayout(null);
 
         btnReservarBici.setBackground(new java.awt.Color(0, 0, 0));

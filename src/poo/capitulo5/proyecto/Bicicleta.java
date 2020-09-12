@@ -67,7 +67,7 @@ public class Bicicleta extends VehiculoSinMotor {
     @Override
     public String presentarInfo() {
         
-        return "*-Informacion de la bici-*" + super.presentarInfo() + 
+        return "\n-*Informacion de la bici*-" + super.presentarInfo() + 
                 "\n\nMaterial: " + material + "\n\nPrecio: " + precio;
     }
 }

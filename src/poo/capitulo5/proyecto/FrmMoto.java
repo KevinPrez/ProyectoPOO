@@ -16,7 +16,9 @@ import javax.swing.JOptionPane;
  * @author pc ponce
  */
 public class FrmMoto extends javax.swing.JFrame {
-
+    
+    ArrayList<Cliente> clientesActuales = new ArrayList<>();
+    
     Motocicleta moto1 = new Motocicleta(2020, "Diavel", "Monster", "Negra", 9000.00, "Ducati");
     Motocicleta moto2 = new Motocicleta(2020, "Road King", "Touring", "Azul", 15000.00, "Harley Davidson");
     Motocicleta moto3 = new Motocicleta(2021, "Ninja", "Sport", "Verde", 12000.00, "Kawasaki");
@@ -31,7 +33,7 @@ public class FrmMoto extends javax.swing.JFrame {
     public FrmMoto() {
         initComponents();
         panelinfoMoto.setVisible(false);
-
+        setLocationRelativeTo(null);
     }
 
     /**

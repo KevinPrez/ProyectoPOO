@@ -63,8 +63,8 @@
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="4">
             <StringItem index="0" value="Seleccione un autom&#xf3;vil..."/>
-            <StringItem index="1" value="Crafter"/>
-            <StringItem index="2" value="Gol"/>
+            <StringItem index="1" value="Gol"/>
+            <StringItem index="2" value="Crafter"/>
             <StringItem index="3" value="Jetta"/>
           </StringArray>
         </Property>
@@ -116,6 +116,9 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnReservarAutoActionPerformed"/>
       </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="190" y="210" width="130" height="40"/>

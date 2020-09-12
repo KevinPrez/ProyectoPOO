@@ -77,7 +77,7 @@ public class Motocicleta extends VehiculoConMotor {
     @Override
     public String presentarInfo() {
 
-        return "*-Información de la moto-*" + super.presentarInfo() + 
+        return "*\n-*Información de la moto*-" + super.presentarInfo() + 
                 "\n\nCategoría: " + categoria + "\n\nPrecio " + precio;
     }
 }

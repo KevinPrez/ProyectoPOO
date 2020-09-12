@@ -11,9 +11,10 @@ import java.util.ArrayList;
  *
  * @author pc ponce
  */
-public class Cliente extends Persona{
+public class Cliente extends Persona {
+
     private String email;
-    private ArrayList <Vehiculo> vehiculosReservados = new ArrayList<>();
+    private Vehiculo vehiculoReservado;
 
     public String getEmail() {
         return email;
@@ -43,9 +44,15 @@ public class Cliente extends Persona{
     public boolean esCedulaValida(String cedula) {
         return super.esCedulaValida(cedula);
     }
-    
-    public void agregarVehiculoReservado(Vehiculo vehicle){
-        vehiculosReservados.add(vehicle);
+
+    public void setVehiculoReservado(Vehiculo vehiculosReservado) {
+        this.vehiculoReservado = vehiculosReservado;
     }
-    
+
+    @Override
+    public String toString() {
+        return "Sr/a " + nombre + " con número de cédula " + numCedula + " y correo electrónico "
+                + email + ", el vehículo que reservó es:" + vehiculoReservado.presentarInfo();
+    }
+
 }

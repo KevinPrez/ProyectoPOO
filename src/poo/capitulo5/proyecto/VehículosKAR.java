@@ -20,7 +20,7 @@ import javax.swing.JPanel;
 public class VehículosKAR extends javax.swing.JFrame {
 
     //FondoPanel fondo = new FondoPanel();
-    ArrayList<Cliente> clientes = new ArrayList<>();
+    public ArrayList<Cliente> clientes = new ArrayList<>();
 
     /**
      * Creates new form VehículosKAR
@@ -29,6 +29,7 @@ public class VehículosKAR extends javax.swing.JFrame {
 
         //this.setContentPane(fondo);
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     public void limpiarInterfazPrincipal() {
@@ -37,6 +38,7 @@ public class VehículosKAR extends javax.swing.JFrame {
         txtCedula.setText("");
         cmbVehiculo.setSelectedItem(0);
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -187,6 +189,7 @@ public class VehículosKAR extends javax.swing.JFrame {
                         second.setVisible(true);
                         VehículosKAR.this.setVisible(false);
                         clientes.add(c1);
+                        second.clientesActuales = clientes;
                         limpiarInterfazPrincipal();
                     }
                     if (cmbVehiculo.getSelectedIndex() == 2) {
@@ -216,7 +219,7 @@ public class VehículosKAR extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(rootPane, "Llene todos los apartados por favor.");
         }
-
+        
 
     }//GEN-LAST:event_btnContinuarActionPerformed
 

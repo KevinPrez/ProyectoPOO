@@ -6,6 +6,7 @@
 package poo.capitulo5.proyecto;
 
 import java.awt.Image;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collections;
 import javax.swing.Icon;
@@ -17,13 +18,16 @@ import javax.swing.JOptionPane;
  * @author pc ponce
  */
 public class FrmAuto extends javax.swing.JFrame {
-
+    
+    ArrayList<Cliente> clientesActuales = new ArrayList<>();
+    
     Automovil auto1 = new Automovil(2020, "Gol", 5, "Plateado", "Volkswagen", 16000.00);
     Automovil auto2 = new Automovil(2019, "Crafter", 21, "Blanco", "Volkswagen", 63000.00);
     Automovil auto3 = new Automovil(2020, "Jetta", 5, "Rojo", "Volkswagen", 19990.00);
-
-    ImageIcon crafter = new ImageIcon(getClass().getResource("/Automoviles/Crafter Blanco 2016.png"));
+    Automovil[] autos = {auto1, auto2 , auto3};
+    
     ImageIcon gol = new ImageIcon(getClass().getResource("/Automoviles/Gol Plateado 2017.png"));
+    ImageIcon crafter = new ImageIcon(getClass().getResource("/Automoviles/Crafter Blanco 2016.png"));
     ImageIcon jetta = new ImageIcon(getClass().getResource("/Automoviles/Jetta Rojo 2018.png"));
 
     /**
@@ -32,7 +36,7 @@ public class FrmAuto extends javax.swing.JFrame {
     public FrmAuto() {
         initComponents();
         panelInfoAuto.setVisible(false);
-
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -71,7 +75,7 @@ public class FrmAuto extends javax.swing.JFrame {
         cmbAutomoviles.setBackground(new java.awt.Color(0, 0, 0));
         cmbAutomoviles.setFont(new java.awt.Font("Wide Latin", 0, 12)); // NOI18N
         cmbAutomoviles.setForeground(new java.awt.Color(255, 255, 255));
-        cmbAutomoviles.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione un automóvil...", "Crafter", "Gol", "Jetta" }));
+        cmbAutomoviles.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione un automóvil...", "Gol", "Crafter", "Jetta" }));
         getContentPane().add(cmbAutomoviles);
         cmbAutomoviles.setBounds(90, 100, 330, 40);
 
@@ -142,14 +146,14 @@ public class FrmAuto extends javax.swing.JFrame {
         switch (index) {
             case 1:
                 panelInfoAuto.setVisible(true);
-                Icon imgCrafter = new ImageIcon(crafter.getImage().getScaledInstance(lblImgCarro.getWidth(), lblImgCarro.getHeight(), Image.SCALE_DEFAULT));
-                lblImgCarro.setIcon(imgCrafter);
+                Icon imgGol = new ImageIcon(gol.getImage().getScaledInstance(lblImgCarro.getWidth(), lblImgCarro.getHeight(), Image.SCALE_DEFAULT));
+                lblImgCarro.setIcon(imgGol);
                 txaInfoCarro.setText(auto1.presentarInfo());
                 break;
             case 2:
                 panelInfoAuto.setVisible(true);
-                Icon imgGol = new ImageIcon(gol.getImage().getScaledInstance(lblImgCarro.getWidth(), lblImgCarro.getHeight(), Image.SCALE_DEFAULT));
-                lblImgCarro.setIcon(imgGol);
+                Icon imgCrafter = new ImageIcon(crafter.getImage().getScaledInstance(lblImgCarro.getWidth(), lblImgCarro.getHeight(), Image.SCALE_DEFAULT));
+                lblImgCarro.setIcon(imgCrafter);
                 txaInfoCarro.setText(auto2.presentarInfo());
                 break;
             case 3:
@@ -165,7 +169,22 @@ public class FrmAuto extends javax.swing.JFrame {
     }//GEN-LAST:event_btnMostrarInfoAutoActionPerformed
 
     private void btnReservarAutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReservarAutoActionPerformed
-
+        int index = cmbAutomoviles.getSelectedIndex() - 1;
+        Cliente clienteactual = clientesActuales.get(clientesActuales.size()-1);
+        int respuesta = JOptionPane.showConfirmDialog(rootPane, "¿Está seguro de querer reservar un " + autos[index].getModelo() + "?","Confirmación", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        if(respuesta == JOptionPane.YES_OPTION){
+            clienteactual.setVehiculoReservado(autos[index]);
+            JOptionPane.showMessageDialog(rootPane, clienteactual.toString()+
+                    "\n\nGracias por darnos el honor de ayudarle a escoger su próximo vehículo.");
+            this.setVisible(false);
+            VehículosKAR interfaz = new VehículosKAR();
+            interfaz.clientes = clientesActuales;
+            interfaz.setVisible(true);
+        }
+        else{
+            cmbAutomoviles.setSelectedIndex(0);
+            panelInfoAuto.setVisible(false);
+        }
     }//GEN-LAST:event_btnReservarAutoActionPerformed
 
     private void btnCerrarInfoAutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarInfoAutoActionPerformed
@@ -212,7 +231,7 @@ public class FrmAuto extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCerrarInfoAuto;
     private javax.swing.JButton btnMostrarInfoAuto;
-    private javax.swing.JButton btnReservarAuto;
+    public javax.swing.JButton btnReservarAuto;
     private javax.swing.JComboBox<String> cmbAutomoviles;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblAutomovil;
