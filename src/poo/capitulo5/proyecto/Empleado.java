@@ -10,6 +10,7 @@ package poo.capitulo5.proyecto;
  * @author pc ponce
  */
 public class Empleado extends Persona {
+
     private double sueldo;
 
     public double getSueldo() {
@@ -35,11 +36,10 @@ public class Empleado extends Persona {
     public void setNumCedula(String numCedula) {
         this.numCedula = numCedula;
     }
-    
-    public String realizarProforma(){
-        String proforma="El empleado: "+nombre+"\nNúmero de cédula: "+numCedula;
-        
-        
+
+    public String realizarProforma() {
+        String proforma = "El empleado: " + nombre + "\nNúmero de cédula: " + numCedula;
+
         return proforma;
     }
 
@@ -47,6 +47,5 @@ public class Empleado extends Persona {
     public boolean esCedulaValida(String cedula) {
         return super.esCedulaValida(cedula); //To change body of generated methods, choose Tools | Templates.
     }
-    
-    
+
 }

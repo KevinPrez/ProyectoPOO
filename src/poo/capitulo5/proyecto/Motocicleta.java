@@ -5,6 +5,9 @@
  */
 package poo.capitulo5.proyecto;
 
+import poo.capitulo5.proyecto.VehiculoConMotor;
+import poo.capitulo5.proyecto.VehiculoConMotor;
+
 /**
  *
  * @author pc ponce
@@ -77,7 +80,7 @@ public class Motocicleta extends VehiculoConMotor {
     @Override
     public String presentarInfo() {
 
-        return "*\n-*Información de la moto*-" + super.presentarInfo() + 
-                "\n\nCategoría: " + categoria + "\n\nPrecio " + precio;
+        return "*\n-*Información de la Motocicleta*-" + super.presentarInfo()
+                + "\n\nCategoría: " + categoria + "\n\nPrecio: " + precio;
     }
 }

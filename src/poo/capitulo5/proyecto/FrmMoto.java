@@ -16,19 +16,18 @@ import javax.swing.JOptionPane;
  * @author pc ponce
  */
 public class FrmMoto extends javax.swing.JFrame {
-    
+
     ArrayList<Cliente> clientesActuales = new ArrayList<>();
-    
+
     Motocicleta moto1 = new Motocicleta(2020, "Diavel", "Monster", "Negra", 9000.00, "Ducati");
     Motocicleta moto2 = new Motocicleta(2020, "Road King", "Touring", "Azul", 15000.00, "Harley Davidson");
     Motocicleta moto3 = new Motocicleta(2021, "Ninja", "Sport", "Verde", 12000.00, "Kawasaki");
-    Motocicleta[] motos={moto1,moto2,moto3};
-    
+    Motocicleta[] motos = {moto1, moto2, moto3};
+
     ImageIcon diavel = new ImageIcon(getClass().getResource("/Motocicletas/Ducati Diavel Negra 2020.png"));
     ImageIcon roadKing = new ImageIcon(getClass().getResource("/Motocicletas/Harley Davidson Road King Azul 2020.png"));
     ImageIcon ninja = new ImageIcon(getClass().getResource("/Motocicletas/Kawasaki Ninja Verde 2021.jpg"));
-    
-    
+
     /**
      * Creates new form GUIbici
      */
@@ -137,21 +136,20 @@ public class FrmMoto extends javax.swing.JFrame {
     private void btnReservarMotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReservarMotoActionPerformed
         // TODO add your handling code here:
         int index = cmbMotocicletas.getSelectedIndex() - 1;
-        Cliente clienteActual = clientesActuales.get(clientesActuales.size()-1);
-        int respuesta = JOptionPane.showConfirmDialog(rootPane, "¿Está seguro de querer reservar un " + motos[index].getModelo() + "?","Confirmación", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-        if(respuesta == JOptionPane.YES_OPTION){
+        Cliente clienteActual = clientesActuales.get(clientesActuales.size() - 1);
+        int respuesta = JOptionPane.showConfirmDialog(rootPane, "¿Está seguro que desea reservar un " + motos[index].getModelo() + "?", "Confirmación", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        if (respuesta == JOptionPane.YES_OPTION) {
             clienteActual.setVehiculoReservado(motos[index]);
-            JOptionPane.showMessageDialog(rootPane, clienteActual.toString()+
-                    "\n\nGracias por darnos el honor de ayudarle a escoger su próxima motocicleta.");
+            JOptionPane.showMessageDialog(rootPane, clienteActual.toString()
+                    + "\n\nGracias por darnos el honor de ayudarle a escoger su próxima motocicleta.");
             this.setVisible(false);
             VehículosKAR interfaz = new VehículosKAR();
             interfaz.clientes = clientesActuales;
             interfaz.setVisible(true);
-        }
-        else{
+        } else {
             cmbMotocicletas.setSelectedIndex(0);
             panelinfoMoto.setVisible(false);
-        }        
+        }
 
     }//GEN-LAST:event_btnReservarMotoActionPerformed
 
@@ -164,29 +162,29 @@ public class FrmMoto extends javax.swing.JFrame {
                 panelinfoMoto.setVisible(true);
                 Icon imgDiavel = new ImageIcon(diavel.getImage().getScaledInstance(lblfotoMoto.getWidth(), lblfotoMoto.getHeight(), Image.SCALE_DEFAULT));
                 lblfotoMoto.setIcon(imgDiavel);
-                txainfoMoto.setText(moto1.presentarInfo()); 
+                txainfoMoto.setText(moto1.presentarInfo());
                 break;
             case 2:
                 panelinfoMoto.setVisible(true);
                 Icon imgroadKing = new ImageIcon(roadKing.getImage().getScaledInstance(lblfotoMoto.getWidth(), lblfotoMoto.getHeight(), Image.SCALE_DEFAULT));
                 lblfotoMoto.setIcon(imgroadKing);
-                txainfoMoto.setText(moto2.presentarInfo());                
+                txainfoMoto.setText(moto2.presentarInfo());
                 break;
             case 3:
-                panelinfoMoto.setVisible(true); 
+                panelinfoMoto.setVisible(true);
                 Icon imgninja = new ImageIcon(ninja.getImage().getScaledInstance(lblfotoMoto.getWidth(), lblfotoMoto.getHeight(), Image.SCALE_DEFAULT));
                 lblfotoMoto.setIcon(imgninja);
                 txainfoMoto.setText(moto3.presentarInfo());
                 break;
             default:
-                JOptionPane.showMessageDialog(rootPane, "Seleccione una moto para ver su información");
+                JOptionPane.showMessageDialog(rootPane, "Seleccione una motocicleta para ver su información.");
         }
     }//GEN-LAST:event_btnMostrarInfoMotoActionPerformed
 
     private void btnCerrarInfoMotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarInfoMotoActionPerformed
         // TODO add your handling code here:
-            panelinfoMoto.setVisible(false);
-            cmbMotocicletas.setSelectedIndex(0);
+        panelinfoMoto.setVisible(false);
+        cmbMotocicletas.setSelectedIndex(0);
     }//GEN-LAST:event_btnCerrarInfoMotoActionPerformed
 
 //        java.awt.EventQueue.invokeLater(new Runnable() {

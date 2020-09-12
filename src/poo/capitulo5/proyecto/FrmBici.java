@@ -17,22 +17,24 @@ import javax.swing.JOptionPane;
  * @author pc ponce
  */
 public class FrmBici extends javax.swing.JFrame {
-    
+
     ArrayList<Cliente> clientesActuales = new ArrayList<>();
-    
+
     Bicicleta bici1 = new Bicicleta("Acero Inosidable", "Rallon M LTD", "Verde", "Orbea", 1200.00);
     Bicicleta bici2 = new Bicicleta("Fibra de carbono", "S-Works Turbo Levo", "Rojo", "Specialized", 11600.00);
     Bicicleta bici3 = new Bicicleta("Aluminio", "SpeedFox", "Gris", "BMC Bikes", 10499.00);
 
+    Bicicleta[] bicis = {bici1, bici2, bici3};
     ImageIcon Rallon = new ImageIcon(getClass().getResource("/Bicicletas/Rallon M LTD Verde.jpg"));
     ImageIcon Turbo = new ImageIcon(getClass().getResource("/Bicicletas/S-Works Turbo Levo Rojo.jpg"));
     ImageIcon SpeedFox = new ImageIcon(getClass().getResource("/Bicicletas/SpeedFox Gris.jpg"));
+
     /**
      * Creates new form GUImoto
      */
     public FrmBici() {
         initComponents();
-        
+
         panelInfoBici.setVisible(false);
         setLocationRelativeTo(null);
     }
@@ -68,6 +70,11 @@ public class FrmBici extends javax.swing.JFrame {
         btnReservarBici.setFont(new java.awt.Font("Wide Latin", 0, 12)); // NOI18N
         btnReservarBici.setForeground(new java.awt.Color(255, 255, 255));
         btnReservarBici.setText("Reservar");
+        btnReservarBici.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnReservarBiciActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnReservarBici);
         btnReservarBici.setBounds(180, 200, 130, 40);
 
@@ -141,35 +148,54 @@ public class FrmBici extends javax.swing.JFrame {
 
     private void btnMostrarInfoBiciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarInfoBiciActionPerformed
         int index = cmbBicicletas.getSelectedIndex();
-        
+
         //switch para mostar solo el vehiculo solicitado
-        switch(index){
-            case 1 :
+        switch (index) {
+            case 1:
                 panelInfoBici.setVisible(true);
                 Icon imgRallon = new ImageIcon(Rallon.getImage().getScaledInstance(lblImgBici.getWidth(), lblImgBici.getHeight(), Image.SCALE_DEFAULT));
                 lblImgBici.setIcon(imgRallon);
                 txaInfoBici.setText(bici1.presentarInfo());
-            
+
                 break;
             case 2:
                 panelInfoBici.setVisible(true);
                 Icon imgTurbo = new ImageIcon(Turbo.getImage().getScaledInstance(lblImgBici.getWidth(), lblImgBici.getHeight(), Image.SCALE_DEFAULT));
                 lblImgBici.setIcon(imgTurbo);
                 txaInfoBici.setText(bici2.presentarInfo());
-                
+
                 break;
             case 3:
                 panelInfoBici.setVisible(true);
                 Icon imgSpeedFox = new ImageIcon(SpeedFox.getImage().getScaledInstance(lblImgBici.getWidth(), lblImgBici.getHeight(), Image.SCALE_DEFAULT));
                 lblImgBici.setIcon(imgSpeedFox);
                 txaInfoBici.setText(bici3.presentarInfo());
-                
+
                 break;
-            default :
-                JOptionPane.showMessageDialog(rootPane, "Seleccione una bicicleta para continuar ");
+            default:
+                JOptionPane.showMessageDialog(rootPane, "Seleccione una bicicicleta para ver su información.");
                 break;
         }
     }//GEN-LAST:event_btnMostrarInfoBiciActionPerformed
+
+    private void btnReservarBiciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReservarBiciActionPerformed
+
+        int index = cmbBicicletas.getSelectedIndex() - 1;
+        Cliente clienteactual = clientesActuales.get(clientesActuales.size() - 1);
+        int respuesta = JOptionPane.showConfirmDialog(rootPane, "¿Está seguro que desea reservar un " + bicis[index].getMarca() + "?", "Confirmación", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        if (respuesta == JOptionPane.YES_OPTION) {
+            clienteactual.setVehiculoReservado(bicis[index]);
+            JOptionPane.showMessageDialog(rootPane, clienteactual.toString()
+                    + "\n\nGracias por darnos el honor de ayudarle a escoger su próxima bicicleta.");
+            this.setVisible(false);
+            VehículosKAR interfaz = new VehículosKAR();
+            interfaz.clientes = clientesActuales;
+            interfaz.setVisible(true);
+        } else {
+            cmbBicicletas.setSelectedIndex(0);
+            panelInfoBici.setVisible(false);
+        }
+    }//GEN-LAST:event_btnReservarBiciActionPerformed
 
     /**
      * @param args the command line arguments

@@ -19,7 +19,6 @@ import javax.swing.JPanel;
  */
 public class VehículosKAR extends javax.swing.JFrame {
 
-    //FondoPanel fondo = new FondoPanel();
     public ArrayList<Cliente> clientes = new ArrayList<>();
 
     /**
@@ -27,7 +26,6 @@ public class VehículosKAR extends javax.swing.JFrame {
      */
     public VehículosKAR() {
 
-        //this.setContentPane(fondo);
         initComponents();
         setLocationRelativeTo(null);
     }
@@ -38,7 +36,6 @@ public class VehículosKAR extends javax.swing.JFrame {
         txtCedula.setText("");
         cmbVehiculo.setSelectedItem(0);
     }
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -170,7 +167,7 @@ public class VehículosKAR extends javax.swing.JFrame {
 
         Cliente c1 = new Cliente();
 
-        if (!txtNombre.getText().isBlank() || !txtEmail.getText().isBlank() || !txtCedula.getText().isBlank()) {
+        if (!txtNombre.getText().isBlank()|| !txtEmail.getText().isBlank() || !txtCedula.getText().isBlank()) {
             cedula = txtCedula.getText();
             cedula = cedula.replace("-", "");
             cedula = cedula.replace("_", "");
@@ -182,7 +179,7 @@ public class VehículosKAR extends javax.swing.JFrame {
                     c1.setNumCedula(cedula);
 
                     if (cmbVehiculo.getSelectedIndex() == 0) {
-                        JOptionPane.showMessageDialog(rootPane, "Seleccione que tipo de vehiculo desea ver.");
+                        JOptionPane.showMessageDialog(rootPane, "Seleccione que tipo de vehículo desea ver.");
                     }
                     if (cmbVehiculo.getSelectedIndex() == 1) {
                         FrmAuto second = new FrmAuto();
@@ -197,7 +194,7 @@ public class VehículosKAR extends javax.swing.JFrame {
                         third.setVisible(true);
                         VehículosKAR.this.setVisible(false);
                         clientes.add(c1);
-                        third.clientesActuales=clientes;
+                        third.clientesActuales = clientes;
                         limpiarInterfazPrincipal();
                     }
                     if (cmbVehiculo.getSelectedIndex() == 3) {
@@ -205,7 +202,7 @@ public class VehículosKAR extends javax.swing.JFrame {
                         fourth.setVisible(true);
                         VehículosKAR.this.setVisible(false);
                         clientes.add(c1);
-                        fourth.clientesActuales=clientes;
+                        fourth.clientesActuales = clientes;
                         limpiarInterfazPrincipal();
                     }
                 } else {
@@ -221,7 +218,7 @@ public class VehículosKAR extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(rootPane, "Llene todos los apartados por favor.");
         }
-        
+
 
     }//GEN-LAST:event_btnContinuarActionPerformed
 
@@ -278,16 +275,4 @@ public class VehículosKAR extends javax.swing.JFrame {
     private javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
 
-//    class FondoPanel extends JPanel{
-//        
-//        private Image imagen;
-//        
-//        @Override
-//        public void paint (Graphics g){
-//            imagen = new ImageIcon(getClass().getResource("/Images/imagen_entrada_proy1.jpg")).getImage();
-//            g.drawImage(imagen, 0, 0, getWidth(), getWidth(), this);
-//            setOpaque(false);
-//            super.paint(g);
-//        }
-//    }
 }

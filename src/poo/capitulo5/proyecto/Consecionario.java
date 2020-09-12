@@ -12,12 +12,12 @@ import java.util.ArrayList;
  * @author pc ponce
  */
 public class Consecionario {
+
     private String nombre = "VehículosKAR";
     private String ubicacion = "Av. Amazonas y 10 de Agosto.";
     private String telefono = "1800 - VEHICUKAR";
-    private ArrayList <Vehiculo> vehiculos = new ArrayList <>();
-    
-    
+    private ArrayList<Vehiculo> vehiculos = new ArrayList<>();
+
     public String getNombre() {
         return nombre;
     }
@@ -33,8 +33,8 @@ public class Consecionario {
     public void setUbicacion(String ubicacion) {
         this.ubicacion = ubicacion;
     }
-    
-    public String mostrarInfo(){
-         return "Encuentranos en: " + ubicacion + " Contáctanos al: " + telefono;
+
+    public String mostrarInfo() {
+        return "Encuentranos en: " + ubicacion + " Contáctanos al: " + telefono;
     }
 }

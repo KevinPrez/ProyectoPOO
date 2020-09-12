@@ -51,8 +51,8 @@ public class Cliente extends Persona {
 
     @Override
     public String toString() {
-        return "Sr/a " + nombre + " con número de cédula " + numCedula + " y correo electrónico "
-                + email + ", el vehículo que reservó es:" + vehiculoReservado.presentarInfo();
+        return "Consecionario VehículosKar\n\nCliente: " + nombre + "\nNúmero de cédula: " + numCedula + "\nCorreo electrónico: "
+                + email + "\n\nEl vehículo que reservó es:\n" + vehiculoReservado.presentarInfo();
     }
 
 }

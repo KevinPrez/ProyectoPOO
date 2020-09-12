@@ -18,14 +18,14 @@ import javax.swing.JOptionPane;
  * @author pc ponce
  */
 public class FrmAuto extends javax.swing.JFrame {
-    
+
     ArrayList<Cliente> clientesActuales = new ArrayList<>();
-    
+
     Automovil auto1 = new Automovil(2020, "Gol", 5, "Plateado", "Volkswagen", 16000.00);
     Automovil auto2 = new Automovil(2019, "Crafter", 21, "Blanco", "Volkswagen", 63000.00);
     Automovil auto3 = new Automovil(2020, "Jetta", 5, "Rojo", "Volkswagen", 19990.00);
-    Automovil[] autos = {auto1, auto2 , auto3};
-    
+    Automovil[] autos = {auto1, auto2, auto3};
+
     ImageIcon gol = new ImageIcon(getClass().getResource("/Automoviles/Gol Plateado 2017.png"));
     ImageIcon crafter = new ImageIcon(getClass().getResource("/Automoviles/Crafter Blanco 2016.png"));
     ImageIcon jetta = new ImageIcon(getClass().getResource("/Automoviles/Jetta Rojo 2018.png"));
@@ -142,7 +142,7 @@ public class FrmAuto extends javax.swing.JFrame {
 
     private void btnMostrarInfoAutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarInfoAutoActionPerformed
         int index = cmbAutomoviles.getSelectedIndex();
-        
+
         switch (index) {
             case 1:
                 panelInfoAuto.setVisible(true);
@@ -163,25 +163,24 @@ public class FrmAuto extends javax.swing.JFrame {
                 txaInfoCarro.setText(auto3.presentarInfo());
                 break;
             default:
-                JOptionPane.showMessageDialog(rootPane, "Seleccione un auto para ver su información");
+                JOptionPane.showMessageDialog(rootPane, "Seleccione un auto para ver su información.");
         }
 
     }//GEN-LAST:event_btnMostrarInfoAutoActionPerformed
 
     private void btnReservarAutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReservarAutoActionPerformed
         int index = cmbAutomoviles.getSelectedIndex() - 1;
-        Cliente clienteactual = clientesActuales.get(clientesActuales.size()-1);
-        int respuesta = JOptionPane.showConfirmDialog(rootPane, "¿Está seguro de querer reservar un " + autos[index].getModelo() + "?","Confirmación", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-        if(respuesta == JOptionPane.YES_OPTION){
+        Cliente clienteactual = clientesActuales.get(clientesActuales.size() - 1);
+        int respuesta = JOptionPane.showConfirmDialog(rootPane, "¿Está seguro que desea reservar un " + autos[index].getModelo() + "?", "Confirmación", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        if (respuesta == JOptionPane.YES_OPTION) {
             clienteactual.setVehiculoReservado(autos[index]);
-            JOptionPane.showMessageDialog(rootPane, clienteactual.toString()+
-                    "\n\nGracias por darnos el honor de ayudarle a escoger su próximo vehículo.");
+            JOptionPane.showMessageDialog(rootPane, clienteactual.toString()
+                    + "\n\nGracias por darnos el honor de ayudarle a escoger su próximo vehículo.");
             this.setVisible(false);
             VehículosKAR interfaz = new VehículosKAR();
             interfaz.clientes = clientesActuales;
             interfaz.setVisible(true);
-        }
-        else{
+        } else {
             cmbAutomoviles.setSelectedIndex(0);
             panelInfoAuto.setVisible(false);
         }

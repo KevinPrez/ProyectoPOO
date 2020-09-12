@@ -14,8 +14,6 @@ public abstract class Persona {
     protected String nombre;
     protected String numCedula;
 
-
-
     public boolean esCedulaValida(String cedula) {
         boolean validez = false;
         int cantidad = cedula.length();
